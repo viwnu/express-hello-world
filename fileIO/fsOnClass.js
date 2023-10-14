@@ -1,5 +1,4 @@
-
-import fs from "fs/promises"
+const fs = require('fs/promises')
 
 
 class fileIO {

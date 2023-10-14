@@ -1,7 +1,7 @@
 const fs = require("fs/promises")
 const Emitter = require("events")
 
-import fileIO from './fsOnClass'
+const fileIO = require('./fsOnClass')
 
 
 let emitter = new Emitter()
