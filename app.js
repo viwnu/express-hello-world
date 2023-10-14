@@ -40,4 +40,9 @@ app.use('*', (req,res) => {
     .end()
 })
 
+app.get('/hello', (req, res) => {
+  console.log('calling hello')
+  res.send('hello')
+})
+
 module.exports = app
