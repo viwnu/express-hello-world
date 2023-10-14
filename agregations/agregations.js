@@ -1,6 +1,6 @@
 const express = require('express')
 
-const {readBundle, writeBundle, deleteBundle} = require('../fileIO/fileIOHandler.js')
+const {readBundle, writeBundle, deleteBundle} = require('../db/db.js')
 
 const router = express.Router()
 
