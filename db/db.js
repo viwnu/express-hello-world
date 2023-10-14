@@ -1,7 +1,12 @@
 const CyclicDb = require("@cyclic.sh/dynamodb")
 
+console.log('CyclicDb: ', CyclicDb)
+
 const db = CyclicDb("tiny-blue-hatchling-robeCyclicDB") // find it on the Database/Storage tab
+console.log('db: ', db)
 let agregations = db.collection('agregations')
+
+console.log('agregations: ', agregations)
 
 module.exports.readBundle = async (filePath) => {
     const bundle = await agregations.list()
