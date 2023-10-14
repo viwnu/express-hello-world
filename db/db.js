@@ -1,5 +1,4 @@
 const DynamoDb = require("@cyclic.sh/dynamodb")
-import DynamoDb from "cyclic-dynamodb";
 
 const db = DynamoDb("tiny-blue-hatchling-robeCyclicDB")
 const agregations = db.collection("agregations")
