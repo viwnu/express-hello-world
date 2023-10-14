@@ -10,7 +10,7 @@ router.get('/', function (req, res) { res.send('hellow dura4ok') })
 router.post('/send', function(req ,res){
     // console.log(`Заголовки запроса: ${Object.keys(req)}`);
     const data = req.body
-    console.log(`Incoming to server Data = ${req}`);
+    console.log(`Incoming to server Data = ${JSON.stringify(req)}`);
     for (const key in data) {
         console.log('in data obj')
         
