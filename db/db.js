@@ -1,4 +1,4 @@
-const CyclicDB = require('cyclic-dynamodb')
+const CyclicDb = require("@cyclic.sh/dynamodb")
 
 const db = CyclicDB(tiny-blue-hatchling-robeCyclicDB) // find it on the Database/Storage tab
 let agregations = db.collection('agregations')
