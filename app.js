@@ -2,6 +2,8 @@ const express = require('express')
 const path = require("path");
 const app = express()
 
+const routes = require('./routes/index')
+
 // #############################################################################
 // Logs all request paths and method
 app.use(function (req, res, next) {
@@ -39,6 +41,9 @@ app.use('/main*', (req,res) => {
     })
     .end()
 })
+
+// add router in express app
+app.use("/fileio",routes)
 
 app.get('/hello', (req, res) => {
   console.log('calling hello')
