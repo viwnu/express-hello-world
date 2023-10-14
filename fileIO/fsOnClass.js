@@ -135,8 +135,7 @@ class fileIO {
 
 }
 
-export default fileIO
-
+module.exports = fileIO
 
 
 
