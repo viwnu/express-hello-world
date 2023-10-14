@@ -16,7 +16,7 @@ router.post('/send', function(req ,res){
         
         console.log(data[key])
     }
-    writeBundle(dataBaseFilePath, JSON.stringify(data))
+    writeBundle('', JSON.stringify(data))
       .then((sendData) => {
         console.log('the response from fileIO: ', sendData)
         res.send({sendData})
@@ -25,7 +25,7 @@ router.post('/send', function(req ,res){
 
 router.get("/get", (req, res) => {
   console.log('in get: ', readBundle)
-    readBundle(dataBaseFilePath, 10)
+    readBundle('', 10)
       .then((data) => {
           console.log('the response from fileIO: ', data)
           const sendData = data.map(item => {
@@ -36,7 +36,7 @@ router.get("/get", (req, res) => {
   })
 
   router.get("/get/:agregationId", (req, res) => {
-    readBundle(dataBaseFilePath, 10)
+    readBundle('', 10)
     .then((data) => {
         console.log('the response from fileIO: ', data)
         const agregations = data.map(item => {
@@ -54,11 +54,11 @@ router.get("/get", (req, res) => {
   router.patch('/patch/:agregationId', async (req, res) => {
     console.log(req.params.agregationId)
     try {
-      const deletedData = await deleteBundle(dataBaseFilePath, req.params.agregationId)
+      const deletedData = await deleteBundle('', req.params.agregationId)
       if (!deletedData) { return res.status(404).send('Not found') }
 
       const data = req.body
-      const sendData = await writeBundle(dataBaseFilePath, JSON.stringify(data))
+      const sendData = await writeBundle('', JSON.stringify(data))
       console.log('the response from fileIO: ', sendData)
       res.send({sendData})
 
@@ -71,7 +71,7 @@ router.get("/get", (req, res) => {
   router.delete('/delete/:agregationId', async (req, res) => {
     console.log(req.params.agregationId)
     try {
-      const deletedData = await deleteBundle(dataBaseFilePath, req.params.agregationId)
+      const deletedData = await deleteBundle('', req.params.agregationId)
       deletedData
         ? res.send({deletedData})
         : res.status(404).send('Not found')
