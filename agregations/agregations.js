@@ -4,7 +4,6 @@ const {readBundle, writeBundle, deleteBundle} = require('../db/db.js')
 
 const router = express.Router()
 
-const dataBaseFilePath = 'src/agregations/agregations.txt'
 
 router.get('/', function (req, res) { res.send('hellow dura4ok') })
 
@@ -25,6 +24,7 @@ router.post('/send', function(req ,res){
 })  
 
 router.get("/get", (req, res) => {
+  console.log('in get: ', readBundle)
     readBundle(dataBaseFilePath, 10)
       .then((data) => {
           console.log('the response from fileIO: ', data)
